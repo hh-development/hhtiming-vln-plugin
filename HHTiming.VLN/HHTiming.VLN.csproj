@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7B20711-4E6D-41C3-A18D-85F27902D9FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HHTiming.VLN</RootNamespace>
+    <AssemblyName>HHTiming.VLN</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HHDev.Core.NETFramework">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHDev.Core.NETFramework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHDev.Core.NETStandard">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHDev.Core.NETStandard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHDev.Core.WinForms">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHDev.Core.WinForms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHDev.ProjectFramework.Definitions">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHDev.ProjectFramework.Definitions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHTiming.Core">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHTiming.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHTiming.Core.Definitions">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHTiming.Core.Definitions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHTiming.DAL">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHTiming.DAL.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHTiming.Desktop.Definitions">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHTiming.Desktop.Definitions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HHTiming.WinFormsControls">
+      <HintPath>..\..\desktop\HHTiming.Desktop\bin\$(Configuration)\HHTiming.WinFormsControls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PitStopScoreboard\PitStopScoreboardDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PitStopScoreboard\PitStopScoreboardDisplay.Designer.cs">
+      <DependentUpon>PitStopScoreboardDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PitStopScoreboard\PitStopScoreboardControl.cs" />
+    <Compile Include="PitStopScoreboard\PitStopScoreboardDataContainer.cs" />
+    <Compile Include="PluginEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scoreboard_48x48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Debug copy /y "$(TargetDir)" "$(registry:HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders@Personal)\HH Timing\Plugins\VLN"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
