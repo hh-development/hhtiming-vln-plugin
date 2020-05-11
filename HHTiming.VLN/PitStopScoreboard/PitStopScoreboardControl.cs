@@ -145,7 +145,7 @@ namespace HHTiming.VLN.PitStopScoreboard
 
         private void HandleUserDefinedSessionLengthUIUpdateMessage(UserDefinedSessionLengthUIUpdateMessage sessionLengthMsg)
         {
-            _sessionLength = sessionLengthMsg.SessionLength * 3600;
+            _sessionLength = sessionLengthMsg.SessionLengthHours * 3600;
         }
 
         private void HandleSectorUIUpdateMessage(SectorUIUpdateMessage sectorMsg)
