@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HHTiming.VLN", "HHTiming.VLN\HHTiming.VLN.csproj", "{F7B20711-4E6D-41C3-A18D-85F27902D9FD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HHTiming.DataCache", "hh-timing-data-cache\HHTiming.DataCache\HHTiming.DataCache.csproj", "{F8DA3BE7-C0CC-4347-BCB6-2A27A8B964BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F7B20711-4E6D-41C3-A18D-85F27902D9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7B20711-4E6D-41C3-A18D-85F27902D9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7B20711-4E6D-41C3-A18D-85F27902D9FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8DA3BE7-C0CC-4347-BCB6-2A27A8B964BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8DA3BE7-C0CC-4347-BCB6-2A27A8B964BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8DA3BE7-C0CC-4347-BCB6-2A27A8B964BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8DA3BE7-C0CC-4347-BCB6-2A27A8B964BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
